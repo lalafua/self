@@ -4,3 +4,6 @@
 [submodule "recording"]
 	path = recording
 	url = https://github.com/lalafua/recording
+[submodule "plct-working"]
+	path = plct-working
+	url = https://github.com/lalafua/plct-working
