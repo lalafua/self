@@ -1,0 +1,6 @@
+[submodule "csapp"]
+	path = csapp
+	url = https://github.com/lalafua/csapp
+[submodule "recording"]
+	path = recording
+	url = https://github.com/lalafua/recording
