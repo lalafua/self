@@ -93,8 +93,8 @@ export MANPATH="/usr/local/man:$MANPATH"
 # fi
 
 # Auto start tmux
-if [[ -z "$TMUX" && "$-" == *i* ]]; then
-    tmux attatch-session || tmux new-session
+if [[ ${DISPLAY-} || ${SSH-} ]]; then
+  [[ ! ${TMUX-} ]] && tmux -2u new -As0
 fi
 
 # Compilation flags
