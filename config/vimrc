@@ -1,0 +1,51 @@
+" Basic Settings
+
+set nocompatible
+filetype plugin indent on
+syntax on
+
+set encoding=utf-8
+
+set autoread
+set hidden
+set history=1000
+set undolevels=1000
+set undofile
+set undodir=~/.vim/undo/
+
+set showcmd
+set laststatus=2
+set number
+set relativenumber
+set wildmenu
+set wildmode=longest:full,full
+set confirm
+
+" UI / Apperence
+set cursorline
+set termguicolors
+
+set scrolloff=8
+set sidescrolloff=8
+set visualbell
+set noerrorbells
+
+set shortmess+=c
+set completeopt=menu,menuone,noselect
+
+" Editing Behavior
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
+set autoindent
+
+set wrap
+set linebreak
+
+" Searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
