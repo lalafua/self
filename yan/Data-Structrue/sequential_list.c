@@ -1,10 +1,10 @@
 // definition
 #define MAXSIZE 100
 typedef int elem_t;
-typedef struct{
+typedef struct {
     elem_t data[MAXSIZE];
     unsigned int length;
-}seq_list;
+} seq_list;
 
 // init
 void init_list(seq_list *L){

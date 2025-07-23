@@ -8,7 +8,7 @@ typedef int elem_t;
 typedef struct Node{
     elem_t data;
     struct Node *next;
-}Node;
+} Node;
 
 // init
 Node* init_linked_list(){
