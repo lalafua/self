@@ -327,4 +327,43 @@ bin_tree_node *AVL_insert (bin_tree_node *node, elem_t data) {
 }
 
 
+// ------------------------------------------------------
+
+// Union-Find
+// 并查集（Union-Find）是一种数据结构，主要用于解决集合划分及查询问题。它主要支持两种操作：查找（Find）和合并（Union）。其核心思想是使用一个数组（或其他数据结构）来存储每个元素的父节点信息
+int parent[MAXSIZE];
+int size[MAXSIZE];
+void init_union (int n) {
+    for (int i=0; i<n; i++) {
+        parent[i] = i;
+        size[i] = 1;
+    }
+}
+
+// 查找：查找操作的目的是找到给定元素所属集合的代表。这可以通过追踪父节点来实现，直到找到根元素（即父节点为其自身的元素）。路径压缩可以在查找过程中应用，使得从指定节点到其根的路径上的每个节点都直接指向根，从而提高后续查找的效率。
+int union_find (int x) {
+    if (parent[x] != x) {
+        parent[x] = union_find(parent[x]);
+    }
+    return parent[x];
+}
+
+// 合并：合并操作的目的是将两个集合合并为一个集合。为了执行合并，首先使用 Find 操作找到两个集合的代表，然后决定哪个代表成为新的根。为了保持树的平衡性，并减少查找时间，常用的策略是按秩合并。其中，秩通常表示树的高度。较低的树会被附加到较高的树的根上。
+void union_sets (int x, int y) { // set by size
+    int root_x = union_find(x);
+    int root_y = union_find(y);
+
+    if (root_x != root_y) {
+        if (size[root_x] < size[root_y]) {
+            parent[root_x] = root_y;
+            size[root_y] += size[root_x];
+        }
+        else {
+            parent[root_y] = root_x;
+            size[root_x] += size[root_y];
+        }
+    }
+}
+
+
 
