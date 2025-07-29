@@ -17,4 +17,6 @@ typedef struct tree_node {
     struct tree_node *right;
 } tree_node;
 
+void swap (elem_t *A, elem_t *B);
+
 #endif
