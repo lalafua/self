@@ -131,9 +131,10 @@ int is_safe (int process, int *request) {
 
     // 检查分配后是否安全
     if (is_safe_state()) {
-        printf("INFO: Request granted. System is still in safe state. \n");
+        printf("INFO: Request granted. System is still in safe state.\n");
         return 1;
     }
+    // 不安全则回滚
     else {
         for (int i=0; i<MAX_RESOURCES; i++) {
             available[i] += request[i];

@@ -50,3 +50,8 @@ gcc hello.c -o hello.out # executable file
 | 地址冲突       | 操作系统通过页表映射虚拟地址到不同的物理地址                        |
 | 数据安全       | 用户进程访问非法地址会触发页错误（Page Fault）                  |
 | 地址重定位      | 不需要程序知道其运行在物理内存的哪个位置                          |
+
+
+____
+
+[Linux 页表体系](https://www.cnblogs.com/binlovetech/p/17571929.html)
