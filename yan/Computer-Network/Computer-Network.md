@@ -57,5 +57,10 @@ ___
 4. 效果
 最大真实窗口可拓展到：（2^16 - 1）x 2^14 ≈ 2^30 = 1GB
 
-[Q] TCP的选择性确认（Selective Acknowledgment, SACK）
+[Q] TCP的选择性确认（Selective Acknowledgment, SACK），Selective Repeat
 [A]
+1. TCP标准确认机制，Go Back N，累计确认（Cumulative Acknowledgment）
+    - 工作方式：接收方发送的ACK号表示“我已经按顺序收到了这个ACK号之前的所有字节，现在我期望收到从这个ACK号开始的数据”
+    - 问题所在：当网络中发生多个数据包丢失时，这个机制效率极低，当部分数据包丢失时，会毫无必要的重传所有后续数据包，非常浪费网络带宽
+2. SACK如何解决这个问题
+    - 核心思想：允许接收方在发送累积确认的同时，额外地、明确地告诉发送方哪些非连续的数据块已经被成功接收
