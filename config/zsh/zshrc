@@ -74,6 +74,7 @@ plugins=(
 	git
 	man
 	eza	
+	rust
 )
 
 source $ZSH/oh-my-zsh.sh
