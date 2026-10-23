@@ -1,0 +1,36 @@
+[user]
+    name = Rayan Lee
+    email = qtexpsem@gmail.com
+    useConfigOnly = true
+
+[init]
+    defaultBranch = main
+[core]
+    editor = code --wait
+    quotepath = false
+    autocrlf = input
+    pager = less -FRX
+[commit]
+    verbose = true
+[pull]
+    rebase = true
+[push]
+    autoSetupRemote = true
+    default = simple
+[merge]
+    conflictStyle = zdiff3
+[rerere]
+    enabled = true
+[rebase]
+    autosquash = true
+[fetch]
+    prune = true
+[diff]
+    algorithm = histogram
+    colorMoved = zebra
+[branch]
+    sort = -committerdate
+[tag]
+    sort = version:refname
+[help]
+    autocorrect = prompt
