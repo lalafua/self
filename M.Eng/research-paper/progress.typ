@@ -91,3 +91,5 @@
 #include "papers/VLNontheFly.typ"
 
 #include "papers/ASENA.typ"
+
+#include "papers/ViSA-VLN.typ"
